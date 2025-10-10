@@ -2,6 +2,7 @@
 using ApiProjeKampi_WebAPI.DTOs.FeatureDTOs;
 using ApiProjeKampi_WebAPI.DTOs.MessageDTOs;
 using ApiProjeKampi_WebAPI.DTOs.ProductDTOs;
+using ApiProjeKampi_WebAPI.DTOs.ServiceDTOs;
 using ApiProjeKampi_WebAPI.Entities;
 using AutoMapper;
 
@@ -31,6 +32,11 @@ namespace ApiProjeKampi_WebAPI.Mapping
             CreateMap<Category, CreateCategoryDTO>().ReverseMap();
             CreateMap<Category, UpdateCategoryDTO>().ReverseMap();
             CreateMap<Category, GetByIdCategoryDTO>().ReverseMap();
+
+            CreateMap<Service, ResultServiceDTO>().ReverseMap();
+            CreateMap<Service, CreateServiceDTO>().ReverseMap();
+            CreateMap<Service, UpdateServiceDTO>().ReverseMap();
+            CreateMap<Service, GetByIdServiceDTO>().ReverseMap();
         }
     }
 }

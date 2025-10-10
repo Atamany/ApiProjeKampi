@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProjeKampi_WebAPI", "ApiProjeKampi_WebAPI\ApiProjeKampi_WebAPI.csproj", "{B91C3BAB-5C81-4479-8CD8-3BAA7CE872BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProjeKampi_WebUI", "ApiProjeKampi_WebUI\ApiProjeKampi_WebUI.csproj", "{C16AE960-945D-44C4-AAB8-C819A23AA966}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B91C3BAB-5C81-4479-8CD8-3BAA7CE872BB} = {B91C3BAB-5C81-4479-8CD8-3BAA7CE872BB}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
