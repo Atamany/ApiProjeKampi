@@ -6,6 +6,7 @@ using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiProjeKampi_WebAPI.Controllers
 {
@@ -73,6 +74,12 @@ namespace ApiProjeKampi_WebAPI.Controllers
         public IActionResult GetProduct(int id)
         {
             return Ok(_mapper.Map<GetByIdProductDTO>(_context.Products.Find(id)));
+        }
+        [HttpGet("ProductListWithCategory")]
+        public IActionResult ProductListWithCategory()
+        {
+            var products = _context.Products.Include(x=>x.Category).ToList();
+            return Ok(_mapper.Map<List<ResultProductWithCategoryDTO>>(products));
         }
 
     }
