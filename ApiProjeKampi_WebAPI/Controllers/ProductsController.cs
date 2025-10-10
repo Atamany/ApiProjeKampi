@@ -1,5 +1,8 @@
 ﻿using ApiProjeKampi_WebAPI.Context;
+using ApiProjeKampi_WebAPI.DTOs.MessageDTOs;
+using ApiProjeKampi_WebAPI.DTOs.ProductDTOs;
 using ApiProjeKampi_WebAPI.Entities;
+using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,21 +15,24 @@ namespace ApiProjeKampi_WebAPI.Controllers
     {
         private readonly IValidator<Product> _validator;
         private readonly ApiContext _context;
+        private readonly IMapper _mapper;
 
-        public ProductsController(IValidator<Product> validator, ApiContext context)
+        public ProductsController(IValidator<Product> validator, ApiContext context, IMapper mapper)
         {
             _validator = validator;
             _context = context;
+            _mapper = mapper;
         }
         [HttpGet]
         public IActionResult ProductList()
         {
             var products = _context.Products.ToList();
-            return Ok(products);
+            return Ok(_mapper.Map<List<ResultProductDTO>>(products));
         }
         [HttpPost]
-        public IActionResult CreateProduct(Product product)
+        public IActionResult CreateProduct(CreateProductDTO createProductDTO)
         {
+            var product = _mapper.Map<Product>(createProductDTO);
             var result = _validator.Validate(product);
             if (!result.IsValid)
             {
@@ -48,8 +54,9 @@ namespace ApiProjeKampi_WebAPI.Controllers
             return Ok("Ürün silme işlemi başarılı!");
         }
         [HttpPut]
-        public IActionResult UpdateProduct(Product product)
+        public IActionResult UpdateProduct(UpdateProductDTO updateProductDTO)
         {
+            var product = _mapper.Map<Product>(updateProductDTO);
             var result = _validator.Validate(product);
             if (!result.IsValid)
             {
@@ -65,7 +72,7 @@ namespace ApiProjeKampi_WebAPI.Controllers
         [HttpGet("GetProduct")]
         public IActionResult GetProduct(int id)
         {
-            return Ok(_context.Products.Find(id));
+            return Ok(_mapper.Map<GetByIdProductDTO>(_context.Products.Find(id)));
         }
 
     }
