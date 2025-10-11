@@ -1,7 +1,7 @@
 ﻿@using ApiProjeKampi_WebUI.DTOs.CategoryDTOs
-@model CreateCategoryDTO
+@model UpdateCategoryDTO
 @{
-    ViewData["Title"] = "CreateCategory";
+    ViewData["Title"] = "UpdateCategory";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -11,19 +11,21 @@
             <div class="card">
                 <form method="post">
                     <div class="card-header">
-                        <h4>Kategori Ekle</h4>
+                        <h4>Kategori Güncelle</h4>
                     </div>
                     <div class="card-body">
+                    <input type="hidden"asp-for="CategoryId" value="@Model.CategoryId" class="form-control">
                         <div class="form-group">
                             <label>Kategori Adı</label>
-                            <input type="text" asp-for="CategoryName" class="form-control">
+                            <input type="text" asp-for="CategoryName" value="@Model.CategoryName" class="form-control">
                         </div>
                     </div>
                     <div class="card-footer text-right">
-                        <button class="btn btn-primary mr-1" type="submit">Ekle</button>
+                        <button class="btn btn-primary mr-1" type="submit">Güncelle</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+

@@ -44,14 +44,14 @@ namespace ApiProjeKampi_WebUI.Controllers
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"https://localhost:7157/api/Categories/{id}");
+            var responseMessage = await client.DeleteAsync($"https://localhost:7157/api/Categories?id={id}");
             return RedirectToAction("CategoryList");
         }
         [HttpGet]
         public async Task<IActionResult> UpdateCategory(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"https://localhost:7157/api/Categories/{id}");
+            var responseMessage = await client.GetAsync($"https://localhost:7157/api/Categories/GetCategory?id={id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
