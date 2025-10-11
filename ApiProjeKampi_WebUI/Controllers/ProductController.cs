@@ -28,20 +28,20 @@ namespace ApiProjeKampi_WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateProduct()
         {
-            //var client = _httpClientFactory.CreateClient();
-            //var responseMessage = await client.GetAsync("https://localhost:7157/api/Category/");
-            //if (responseMessage.IsSuccessStatusCode)
-            //{
-            //    var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            //    var values = JsonConvert.DeserializeObject<List<ResultCategoryDTO>>(jsonData);
-            //    List<SelectListItem> categoryList = (from x in values
-            //                                         select new SelectListItem
-            //                                         {
-            //                                             Text = x.CategoryName,
-            //                                             Value = x.CategoryId.ToString()
-            //                                         }).ToList();
-            //    ViewBag.v = categoryList;
-            //}
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7157/api/Categories/");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<List<ResultCategoryDTO>>(jsonData);
+                List<SelectListItem> categoryList = (from x in values
+                                                     select new SelectListItem
+                                                     {
+                                                         Text = x.CategoryName,
+                                                         Value = x.CategoryId.ToString()
+                                                     }).ToList();
+                ViewBag.v = categoryList;
+            }
 
             return View();
         }
@@ -67,20 +67,20 @@ namespace ApiProjeKampi_WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateProduct(int id)
         {
-            //var client = _httpClientFactory.CreateClient();
-            //var responseMessage = await client.GetAsync("https://localhost:7157/api/Products/ProductListWithCategory");
-            //if (responseMessage.IsSuccessStatusCode)
-            //{
-            //    var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            //    var values = JsonConvert.DeserializeObject<List<ResultProductWithCategoryDTO>>(jsonData);
-            //    List<SelectListItem> categoryList = (from x in values
-            //                                         select new SelectListItem
-            //                                         {
-            //                                             Text = x.CategoryName, 
-            //                                             Value = x.CategoryId.ToString()
-            //                                         }).ToList();
-            //    ViewBag.v = categoryList;
-            //}
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7157/api/Categories/");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultCategoryDTO>>(jsonData);
+                List<SelectListItem> categoryList = (from x in values
+                                                     select new SelectListItem
+                                                     {
+                                                         Text = x.CategoryName,
+                                                         Value = x.CategoryId.ToString()
+                                                     }).ToList();
+                ViewBag.v = categoryList;
+            }
 
             var client2 = _httpClientFactory.CreateClient();
             var responseMessage2 = await client2.GetAsync($"https://localhost:7157/api/Products/GetProduct?id={id}");

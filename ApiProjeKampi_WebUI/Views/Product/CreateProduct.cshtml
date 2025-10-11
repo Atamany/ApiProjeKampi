@@ -32,14 +32,13 @@
                         </div>
                         <div class="form-group">
                             <label>Kategori</label>
-                            @* <select asp-for="CategoryId" class="form-control">
+                            <select asp-for="CategoryId" class="form-control">
                                 <option value="">--Seçiniz--</option>
                                 @foreach (var item in (List<SelectListItem>)ViewBag.v)
                                 {
                                     <option value="@item.Value">@item.Text</option>
                                 }
-                            </select> *@
-                            <input type="number" asp-for="CategoryId" class="form-control">
+                            </select>
                         </div>
                     </div>
                     <div class="card-footer text-right">
