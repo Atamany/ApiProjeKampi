@@ -39,9 +39,9 @@
                                     <td>@item.Title</td>
                                     <td>@item.Description</td>
                                     @if(item.Status==true){
-                                    <td><div class="badge badge-success">@item.Status</div></td>}
+                                    <td><div class="badge badge-success">Aktif</div></td>}
                                     @if(item.Status==false){
-                                    <td><div class="badge badge-danger">@item.Status</div></td>}
+                                    <td><div class="badge badge-danger">Pasif</div></td>}
                                     <td>@item.Price₺</td>
                                     <td><a href="~/Event/DeleteEvent/@item.YummyEventId/" class="btn btn-danger">Sil</a></td>
                                     <td><a href="~/Event/UpdateEvent/@item.YummyEventId/" class="btn btn-warning">Güncelle</a></td>
