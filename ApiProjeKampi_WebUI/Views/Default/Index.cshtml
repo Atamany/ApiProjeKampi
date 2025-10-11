@@ -58,53 +58,8 @@
 
         @await Component.InvokeAsync("_DefaultMenuViewComponentPartial")
         @await Component.InvokeAsync("_TestimonialDefaultComponentPartial")
+        @await Component.InvokeAsync("_EventDefaultComponentPartial")
         
-        <section id="events" class="events section">
-
-            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="swiper init-swiper">
-                    <script type="application/json" class="swiper-config">
-                        {
-                          "loop": true,
-                          "speed": 600,
-                          "autoplay": {
-                            "delay": 5000
-                          },
-                          "slidesPerView": "auto",
-                          "pagination": {
-                            "el": ".swiper-pagination",
-                            "type": "bullets",
-                            "clickable": true
-                          },
-                          "breakpoints": {
-                            "320": {
-                              "slidesPerView": 1,
-                              "spaceBetween": 40
-                            },
-                            "1200": {
-                              "slidesPerView": 3,
-                              "spaceBetween": 1
-                            }
-                          }
-                        }
-                    </script>
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(~/yummy-red-1.0.0/assets/img/events-1.jpg)">
-                            <h3>Custom Parties</h3>
-                            <div class="price align-self-start">$99</div>
-                            <p class="description">
-                                Quo corporis voluptas ea ad. Consectetur inventore sapiente ipsum voluptas eos omnis facere. Enim facilis veritatis id est rem repudiandae nulla expedita quas.
-                            </p>
-                        </div><!-- End Event item -->
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-
-        </section><!-- /Events Section -->
         <section id="chefs" class="chefs section">
 
             <!-- Section Title -->

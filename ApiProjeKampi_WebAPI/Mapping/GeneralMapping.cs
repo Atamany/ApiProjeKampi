@@ -1,4 +1,5 @@
 ﻿using ApiProjeKampi_WebAPI.DTOs.CategoryDTOs;
+using ApiProjeKampi_WebAPI.DTOs.EventDTOs;
 using ApiProjeKampi_WebAPI.DTOs.FeatureDTOs;
 using ApiProjeKampi_WebAPI.DTOs.MessageDTOs;
 using ApiProjeKampi_WebAPI.DTOs.ProductDTOs;
@@ -43,6 +44,11 @@ namespace ApiProjeKampi_WebAPI.Mapping
             CreateMap<Testimonial, CreateTestimonialDTO>().ReverseMap();
             CreateMap<Testimonial, UpdateTestimonialDTO>().ReverseMap();
             CreateMap<Testimonial, GetByIdTestimonialDTO>().ReverseMap();
+
+            CreateMap<YummyEvent, ResultEventDTO>().ReverseMap();
+            CreateMap<YummyEvent, CreateEventDTO>().ReverseMap();
+            CreateMap<YummyEvent, UpdateEventDTO>().ReverseMap();
+            CreateMap<YummyEvent, GetByIdEventDTO>().ReverseMap();
         }
     }
 }

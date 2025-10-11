@@ -19,6 +19,7 @@ namespace ApiProjeKampi_WebAPI.Context
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<YummyEvent> YummyEvents { get; set; }
 
     }
 }
