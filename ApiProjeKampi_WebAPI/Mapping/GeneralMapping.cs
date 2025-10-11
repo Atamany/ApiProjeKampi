@@ -3,6 +3,7 @@ using ApiProjeKampi_WebAPI.DTOs.FeatureDTOs;
 using ApiProjeKampi_WebAPI.DTOs.MessageDTOs;
 using ApiProjeKampi_WebAPI.DTOs.ProductDTOs;
 using ApiProjeKampi_WebAPI.DTOs.ServiceDTOs;
+using ApiProjeKampi_WebAPI.DTOs.TestimonialDTOs;
 using ApiProjeKampi_WebAPI.Entities;
 using AutoMapper;
 
@@ -37,6 +38,11 @@ namespace ApiProjeKampi_WebAPI.Mapping
             CreateMap<Service, CreateServiceDTO>().ReverseMap();
             CreateMap<Service, UpdateServiceDTO>().ReverseMap();
             CreateMap<Service, GetByIdServiceDTO>().ReverseMap();
+
+            CreateMap<Testimonial, ResultTestimonialDTO>().ReverseMap();
+            CreateMap<Testimonial, CreateTestimonialDTO>().ReverseMap();
+            CreateMap<Testimonial, UpdateTestimonialDTO>().ReverseMap();
+            CreateMap<Testimonial, GetByIdTestimonialDTO>().ReverseMap();
         }
     }
 }
