@@ -2,6 +2,7 @@
 using ApiProjeKampi_WebAPI.DTOs.EventDTOs;
 using ApiProjeKampi_WebAPI.DTOs.FeatureDTOs;
 using ApiProjeKampi_WebAPI.DTOs.MessageDTOs;
+using ApiProjeKampi_WebAPI.DTOs.NotificationDTOs;
 using ApiProjeKampi_WebAPI.DTOs.ProductDTOs;
 using ApiProjeKampi_WebAPI.DTOs.ServiceDTOs;
 using ApiProjeKampi_WebAPI.DTOs.TestimonialDTOs;
@@ -49,6 +50,11 @@ namespace ApiProjeKampi_WebAPI.Mapping
             CreateMap<YummyEvent, CreateEventDTO>().ReverseMap();
             CreateMap<YummyEvent, UpdateEventDTO>().ReverseMap();
             CreateMap<YummyEvent, GetByIdEventDTO>().ReverseMap();
+
+            CreateMap<Notification, ResultNotificationDTO>().ReverseMap();
+            CreateMap<Notification, CreateNotificationDTO>().ReverseMap();
+            CreateMap<Notification, UpdateNotificationDTO>().ReverseMap();
+            CreateMap<Notification, GetByIdNotificationDTO>().ReverseMap();
         }
     }
 }
