@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -10,31 +9,13 @@
     <div id="app">
         <div class="main-wrapper main-wrapper-1">
             @await Component.InvokeAsync("_NavbarAdminLayoutComponentPartial")
-            <div class="main-sidebar sidebar-style-2">
-                <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="index.html">
-                            <img alt="image" src="~/otika-bootstrap-admin-template/assets/img/logo.png" class="header-logo" /> <span class="logo-name">Yummy</span>
-                        </a>
-                    </div>
-                    <ul class="sidebar-menu">
-                        <li class="menu-header">Main</li>
-                        <li class="dropdown active">
-                            <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown">
-                                <i data-feather="briefcase"></i><span>Widgets</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-                                <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </aside>
-            </div>            
-            @* @RenderBody() *@
+            @await Component.InvokeAsync("_SidebarAdminLayoutComponentPartial")
+            <div class="main-content">
+                <section class="section">
+                    @RenderBody()
+                    @await Component.InvokeAsync("_RightSettingsAdminLayoutComponentPartial")
+                </section>
+            </div>
         </div>
     </div>
     <script src="~/otika-bootstrap-admin-template/assets/js/app.min.js"></script>
