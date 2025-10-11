@@ -1,0 +1,37 @@
+﻿@using ApiProjeKampi_WebUI.DTOs.MessageDTOs
+@model List<ResultMessageDTO>
+<li class="dropdown dropdown-list-toggle">
+    <a href="#" data-toggle="dropdown"
+       class="nav-link nav-link-lg message-toggle">
+        <i data-feather="mail"></i>
+        <span class="badge headerBadge1">@ViewBag.MessageCount</span>
+    </a>
+    <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+        <div class="dropdown-header">
+            Mesajlar
+            <div class="float-right">
+                <a href="#">Hepsini okundu olarak işaretle</a>
+            </div>
+        </div>
+        <div class="dropdown-list-content dropdown-list-message">
+            @foreach (var item in Model)
+            {
+                <a href="~/Message/MessageDetail/@item.MessageId" class="dropdown-item">
+                    <span class="dropdown-item-avatar
+               text-white">
+                        <img alt="image" src="https://img.freepik.com/premium-vector/orange-envelope-with-t-mail-logo-it_1277826-407.jpg?semt=ais_hybrid&w=740&q=80" class="rounded-circle">
+                    </span> <span class="dropdown-item-desc">
+                        <span class="message-user">
+                            @item.NameSurname
+                        </span>
+                        <span class="time messege-text">@item.Subject</span>
+                        <span class="time">@item.SendDate</span>
+                    </span>
+                </a>
+            }
+        </div>
+        <div class="dropdown-footer text-center">
+            <a href="#">Tüm Mesajlar <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</li>

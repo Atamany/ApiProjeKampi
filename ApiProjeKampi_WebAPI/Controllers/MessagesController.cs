@@ -22,7 +22,7 @@ namespace ApiProjeKampi_WebAPI.Controllers
         [HttpGet]
         public IActionResult MessageList()
         {
-            var values = _context.Messages.ToList();
+            var values = _context.Messages.OrderByDescending(x=>x.MessageId).ToList();
             return Ok(_mapper.Map<List<ResultMessageDTO>>(values));
         }
         [HttpPost]
@@ -54,6 +54,12 @@ namespace ApiProjeKampi_WebAPI.Controllers
         {
             var value = _context.Messages.Find(id);
             return Ok(_mapper.Map<GetByIdMessageDTO>(value));
+        }
+        [HttpGet("MessageListByIsReadFalse")]
+        public IActionResult MessageListByIsReadFalse()
+        {
+            var values = _context.Messages.Where(x=>x.IsRead==false).OrderByDescending(x=>x.MessageId).ToList();
+            return Ok(_mapper.Map<List<ResultMessageDTO>>(values));
         }
     }
 }
