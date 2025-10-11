@@ -1,0 +1,24 @@
+﻿@using ApiProjeKampi_WebUI.DTOs.ProductDTOs
+@model List<ResultProductDTO>
+<div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+    <div class="tab-pane fade active show" id="menu-starters">
+        <div class="tab-header text-center">
+            <p>Menü</p>
+            <h3>Menü</h3>
+        </div>
+        <div class="row gy-5">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 menu-item">
+                    <a href="@item.ImageUrl" width="240px" height="240px" class="glightbox"><img src="@item.ImageUrl" class="menu-img img-fluid" alt=""></a>
+                <h4>@item.ProductName</h4>
+                <p class="ingredients">
+                    @item.ProductDescription
+                </p>
+                <p class="price">
+                    @item.Price ₺
+                </p>
+            </div>}
+        </div>
+    </div>
+</div>
