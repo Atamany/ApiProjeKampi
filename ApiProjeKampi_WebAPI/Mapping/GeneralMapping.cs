@@ -1,4 +1,5 @@
-﻿using ApiProjeKampi_WebAPI.DTOs.CategoryDTOs;
+﻿using ApiProjeKampi_WebAPI.DTOs.AboutDTOs;
+using ApiProjeKampi_WebAPI.DTOs.CategoryDTOs;
 using ApiProjeKampi_WebAPI.DTOs.EventDTOs;
 using ApiProjeKampi_WebAPI.DTOs.FeatureDTOs;
 using ApiProjeKampi_WebAPI.DTOs.MessageDTOs;
@@ -55,6 +56,11 @@ namespace ApiProjeKampi_WebAPI.Mapping
             CreateMap<Notification, CreateNotificationDTO>().ReverseMap();
             CreateMap<Notification, UpdateNotificationDTO>().ReverseMap();
             CreateMap<Notification, GetByIdNotificationDTO>().ReverseMap();
+
+            CreateMap<About, ResultAboutDTO>().ReverseMap();
+            CreateMap<About, CreateAboutDTO>().ReverseMap();
+            CreateMap<About, UpdateAboutDTO>().ReverseMap();
+            CreateMap<About, GetByIdAboutDTO>().ReverseMap();
         }
     }
 }
