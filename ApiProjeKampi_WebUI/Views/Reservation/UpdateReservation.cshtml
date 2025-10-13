@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group">
                             <label>Telefon Numarası</label>
-                            <input type="text" asp-for="PhoneNumber" class="form-control">
+                            <input type="tel" asp-for="PhoneNumber" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Tarih</label>
@@ -42,6 +42,10 @@
                         <div class="form-group">
                             <label>Mesaj</label>
                             <textarea rows="5" asp-for="Message" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Rezervasyon Durumu</label>
+                            <input type="text" asp-for="ReservationStatus" value="Beklemede" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="card-footer text-right">
