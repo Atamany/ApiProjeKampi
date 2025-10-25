@@ -1,0 +1,47 @@
+﻿@using ApiProjeKampi_WebUI.DTOs.ContactDTOs
+@model UpdateContactDTO
+@{
+    ViewData["Title"] = "UpdateContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="section-body">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+            <div class="card">
+                <form method="post">
+                    <div class="card-header">
+                        <h4>İletişim Bilgisi Güncelle</h4>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" asp-for="ContactId" class="form-control">
+                        <div class="form-group">
+                            <label>Adres</label>
+                            <input type="text" asp-for="Address" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon</label>
+                            <input type="text" asp-for="Phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>E-Posta</label>
+                            <input type="email" asp-for="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Açık Saatler</label>
+                            <input type="text" asp-for="OpenHours" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Harita</label>
+                            <input type="url" asp-for="MapLocation" class="form-control">
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary mr-1" type="submit">Güncelle</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
