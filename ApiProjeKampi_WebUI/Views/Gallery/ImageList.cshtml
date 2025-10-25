@@ -1,0 +1,31 @@
+﻿@using ApiProjeKampi_WebUI.DTOs.ImageDTOs
+@model List<ResultImageDTO>
+
+@{
+    ViewData["Title"] = "ImageList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="bootstrap snippet">
+    <section id="portfolio" class="gray-bg padding-top-bottom">
+        <div class="projects-container scrollimation in">
+            <div class="row">
+                @foreach(var item in Model){
+                <article class="col-md-4 col-sm-6 portfolio-item web-design apps psd">
+                    <div class="portfolio-thumb in">
+                        <a href="#" class="main-link">
+                            <img class="img-responsive img-center" width="500" height="400" src="@item.ImageUrl" alt="@item.Title">
+                            <span class="project-title">@item.Title</span>
+                            <span class="overlay-mask"></span>
+                        </a>
+                        <a class="enlarge cboxElement" href="#" title="Bills Project">
+                            <i class="fa fa-expand fa-fw"></i>
+                        </a>
+                        <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
+                    </div>
+                </article>}
+            </div>
+        </div>
+    </section>
+</div>
