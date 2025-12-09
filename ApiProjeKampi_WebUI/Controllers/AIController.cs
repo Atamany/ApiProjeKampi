@@ -15,7 +15,7 @@ namespace ApiProjeKampi_WebUI.Controllers
         public async Task<IActionResult> CreateRecipeWithOpenAI(string prompt)
         {
             Env.Load();
-            var apiKey = Environment.GetEnvironmentVariable("OpenAIApiKey"); ;
+            var apiKey = Environment.GetEnvironmentVariable("OpenAIApiKey");
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
             var requestData = new

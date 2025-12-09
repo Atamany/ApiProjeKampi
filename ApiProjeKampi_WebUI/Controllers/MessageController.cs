@@ -2,6 +2,9 @@
 using DotNetEnv;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using NuGet.Packaging.Signing;
+using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace ApiProjeKampi_WebUI.Controllers
 {
@@ -130,6 +133,35 @@ namespace ApiProjeKampi_WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult>SendMessage(CreateMessageDTO createMessageDTO)
         {
+            Env.Load();
+            var client2 = new HttpClient();
+            var apikey = Environment.GetEnvironmentVariable("HuggingFaceApiKey");
+            client2.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apikey);
+            try
+            {
+                var translateRequestBody = new
+                {
+                    inputs = createMessageDTO.MessageDetails
+                };
+                var translateJson = System.Text.Json.JsonSerializer.Serialize(translateRequestBody);
+                var translateContent = new StringContent(translateJson, System.Text.Encoding.UTF8, "application/json");
+                var translateResponse = await client2.PostAsync("https://router.huggingface.co/hf-inference/models/Helsinki-NLP/opus-mt-tr-en", translateContent);
+                var translateResponseString = await translateResponse.Content.ReadAsStringAsync();
+                string englishText = createMessageDTO.MessageDetails;
+                if (translateResponseString.TrimStart().StartsWith("["))
+                {
+                    var translateDoc=JsonDocument.Parse(translateResponseString);
+                    englishText = translateDoc.RootElement[0].GetProperty("translation_text").GetString();
+                    ViewBag.v = englishText;
+                }
+            }
+            catch
+            {
+
+                throw;
+            }
+
+
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createMessageDTO);
             StringContent stringContent = new StringContent(jsonData, System.Text.Encoding.UTF8, "application/json");
