@@ -73,5 +73,18 @@ namespace ApiProjeKampi_WebUI.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> AnswerMessageWithOpenAI(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"https://localhost:7157/api/Messages/GetMessage?id={id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<GetByIdMessageDTO>(jsonData);
+                return View(values);
+            }
+            return View();
+        }
     }
 }

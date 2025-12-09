@@ -1,0 +1,35 @@
+﻿@using ApiProjeKampi_WebUI.DTOs.MessageDTOs
+@model GetByIdMessageDTO
+@{
+    ViewData["Title"] = "AnswerMessageWithOpenAI";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="section-body">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+            <div class="card">
+                <form method="post">
+                    <div class="card-header">
+                        <h4>OpenAI ile Otomatik Mesaj Yanıt Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" asp-for="MessageId" class="form-control">
+                                                <div class="form-group">
+                            <label>Mesaj</label>
+                            <textarea rows="12" readonly style="height:200px !important" asp-for="MessageDetails" class="form-control"></textarea>
+                        </div>
+                                                <div class="form-group">
+                            <label>OpenAI Otomatik Cevabı</label>
+                            <textarea rows="12" style="height:200px !important" class="form-control"></textarea>
+                        </div>
+                        
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary mr-1" type="submit">Cevabı e-posta olarak gönder!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
