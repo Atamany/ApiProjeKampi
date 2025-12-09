@@ -1,0 +1,32 @@
+﻿@using ApiProjeKampi_WebUI.DTOs.MessageDTOs
+@model CreateMessageDTO
+<form asp-action="SendMessage" method="post" asp-controller="Message" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+    <div class="row gy-4">
+        <input type="hidden" asp-for="SendDate" value="@DateTime.Now.ToString()" />
+        <input type="hidden" asp-for="IsRead" value="False" />
+
+        <div class="col-md-6">
+            <input type="text" asp-for="NameSurname" class="form-control" placeholder="Ad - Soyad" required="">
+        </div>
+
+        <div class="col-md-6 ">
+            <input type="email" class="form-control" asp-for="Email" placeholder="e-Posta Adresiniz" required="">
+        </div>
+
+        <div class="col-md-12">
+            <input type="text" class="form-control" asp-for="Subject" placeholder="Konu" required="">
+        </div>
+
+        <div class="col-md-12">
+            <textarea class="form-control" asp-for="MessageDetails" rows="6" placeholder="Mesaj" required=""></textarea>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <div class="loading">Yükleniyor...</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Mesajınız Başarıyla Gönderildi! Teşekkürler!</div>
+            <button type="submit">Mesajı Gönder!</button>
+        </div>
+
+    </div>
+</form>

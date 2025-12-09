@@ -123,5 +123,22 @@ namespace ApiProjeKampi_WebUI.Controllers
             public string role { get; set; }
             public string content { get; set; }
         }
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public async Task<IActionResult>SendMessage(CreateMessageDTO createMessageDTO)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(createMessageDTO);
+            StringContent stringContent = new StringContent(jsonData, System.Text.Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("https://localhost:7157/api/Messages/", stringContent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("MessageList");
+            }
+            return View();
+        }
     }
 }
