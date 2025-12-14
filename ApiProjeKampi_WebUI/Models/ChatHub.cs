@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.SignalR;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace ApiProjeKampi_WebUI.Models
 {
@@ -63,7 +64,45 @@ namespace ApiProjeKampi_WebUI.Models
             resp.EnsureSuccessStatusCode();
             using var stream = await resp.Content.ReadAsStreamAsync(cancellationToken);
             using var reader = new StreamReader(stream);
-            
+            var sb = new StringBuilder();
+            while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            {
+                var line = await reader.ReadLineAsync();
+                if (string.IsNullOrWhiteSpace(line)) continue;
+                if (!line.StartsWith("data: ")) continue;
+                var data = line["data:".Length..].Trim();
+                if (data == "[DONE]") break;
+                try
+                {
+                    var chunk = JsonSerializer.Deserialize<ChatStreamChunk>(data);
+                    var delta = chunk?.Choices?.FirstOrDefault()?.Delta?.Content;
+                    if (!string.IsNullOrEmpty(delta))
+                    {
+                        sb.Append(delta);
+                        await Clients.Caller.SendAsync("ReceiveToken", delta, cancellationToken);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error parsing JSON: {ex.Message}");
+                }
+            }
+            var full = sb.ToString();
+            history.Add(new() { ["role"] = "assistant", ["content"] = full });
+            await Clients.Caller.SendAsync("CompleteMessage", full, cancellationToken);
+        }
+        private sealed class ChatStreamChunk
+        {
+            [JsonPropertyName("choices")] public List<Choice>? Choices { get; set; }
+        }
+        private sealed class Choice
+        {
+            [JsonPropertyName("delta")] public Delta? Delta { get; set; }
+            [JsonPropertyName("finish_reason")] public string? FinishReason { get; set; }
+        }
+        private sealed class Delta
+        {
+            [JsonPropertyName("content")] public string? Content { get; set; }
         }
     }
 }
