@@ -14,8 +14,6 @@ namespace ApiProjeKampi_WebUI.Models
         private readonly IHttpClientFactory _httpClientFactory;
         public ChatHub(IHttpClientFactory httpClientFactory)
         {
-            Env.Load();
-            var client = new HttpClient();
             _httpClientFactory = httpClientFactory;
         }
         private static readonly Dictionary<string, List<Dictionary<string, string>>> _history = new();
