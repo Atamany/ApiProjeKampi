@@ -54,5 +54,29 @@ namespace ApiProjeKampi_WebAPI.Controllers
             var value = _context.Reservations.Find(id);
             return Ok(_mapper.Map<GetByIdReservationDTO>(value));
         }
+        [HttpGet("GetTotalReservationCount")]
+        public IActionResult GetTotalReservationCount()
+        {
+            var values = _context.Reservations.Count();
+            return Ok(values);
+        }
+        [HttpGet("GetTotalCustomerCount")]
+        public IActionResult GetTotalCustomerCount()
+        {
+            var values = _context.Reservations.Sum(x=>x.CountOfPeople);
+            return Ok(values);
+        }
+        [HttpGet("GetPendingReservations")]
+        public IActionResult GetPendingReservations()
+        {
+            var values = _context.Reservations.Where(x=>x.ReservationStatus=="Beklemede").Count();
+            return Ok(values);
+        }
+        [HttpGet("GetApprovedReservations")]
+        public IActionResult GetApprovedReservations()
+        {
+            var values = _context.Reservations.Where(x => x.ReservationStatus == "Onaylandı").Count();
+            return Ok(values);
+        }
     }
 }
