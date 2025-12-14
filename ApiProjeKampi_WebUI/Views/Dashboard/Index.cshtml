@@ -3,99 +3,7 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<div class="row ">
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-statistic-4">
-                <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                            <div class="card-content">
-                                <h5 class="font-15">New Booking</h5>
-                                <h2 class="mb-3 font-18">258</h2>
-                                <p class="mb-0"><span class="col-green">10%</span> Increase</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                            <div class="banner-img">
-                                <img src="assets/img/banner/1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-statistic-4">
-                <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                            <div class="card-content">
-                                <h5 class="font-15"> Customers</h5>
-                                <h2 class="mb-3 font-18">1,287</h2>
-                                <p class="mb-0"><span class="col-orange">09%</span> Decrease</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                            <div class="banner-img">
-                                <img src="assets/img/banner/2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-statistic-4">
-                <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                            <div class="card-content">
-                                <h5 class="font-15">New Project</h5>
-                                <h2 class="mb-3 font-18">128</h2>
-                                <p class="mb-0">
-                                    <span class="col-green">18%</span>
-                                    Increase
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                            <div class="banner-img">
-                                <img src="assets/img/banner/3.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-statistic-4">
-                <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                            <div class="card-content">
-                                <h5 class="font-15">Revenue</h5>
-                                <h2 class="mb-3 font-18">$48,697</h2>
-                                <p class="mb-0"><span class="col-green">42%</span> Increase</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                            <div class="banner-img">
-                                <img src="assets/img/banner/4.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("_DashboardWidgetComponentPartial")
 <div class="row">
     <div class="col-12 col-sm-12 col-lg-12">
         <div class="card ">
@@ -274,17 +182,17 @@
                                 <ul class="list-unstyled order-list m-b-0 m-b-0">
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Wildan Ahdian">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="John Deo">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Sarah Smith">
                                     </li>
                                     <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span></li>
@@ -316,12 +224,12 @@
                                 <ul class="list-unstyled order-list m-b-0 m-b-0">
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-1.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-1.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Wildan Ahdian">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-2.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-2.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="John Deo">
                                     </li>
                                     <li class="avatar avatar-sm"><span class="badge badge-primary">+2</span></li>
@@ -353,17 +261,17 @@
                                 <ul class="list-unstyled order-list m-b-0 m-b-0">
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-3.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-3.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Wildan Ahdian">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-4.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-4.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="John Deo">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-5.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-5.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Sarah Smith">
                                     </li>
                                     <li class="avatar avatar-sm"><span class="badge badge-primary">+3</span></li>
@@ -395,12 +303,12 @@
                                 <ul class="list-unstyled order-list m-b-0 m-b-0">
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-7.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-7.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="John Deo">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Sarah Smith">
                                     </li>
                                     <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span></li>
@@ -432,17 +340,17 @@
                                 <ul class="list-unstyled order-list m-b-0 m-b-0">
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Wildan Ahdian">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="John Deo">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-2.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-2.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Sarah Smith">
                                     </li>
                                     <li class="avatar avatar-sm"><span class="badge badge-primary">+2</span></li>
@@ -474,17 +382,17 @@
                                 <ul class="list-unstyled order-list m-b-0 m-b-0">
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Wildan Ahdian">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="John Deo">
                                     </li>
                                     <li class="team-member team-member-sm">
                                         <img class="rounded-circle"
-                                             src="assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
+                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
                                              data-original-title="Sarah Smith">
                                     </li>
                                     <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span></li>
@@ -521,7 +429,7 @@
             </div>
             <div class="card-body">
                 <div class="support-ticket media pb-1 mb-3">
-                    <img src="assets/img/users/user-1.png" class="user-img mr-2" alt="">
+                    <img src="~/otika-bootstrap-admin-template/assets/img/users/user-1.png" class="user-img mr-2" alt="">
                     <div class="media-body ml-3">
                         <div class="badge badge-pill badge-success mb-1 float-right">Feature</div>
                         <span class="font-weight-bold">#89754</span>
@@ -537,7 +445,7 @@
                     </div>
                 </div>
                 <div class="support-ticket media pb-1 mb-3">
-                    <img src="assets/img/users/user-2.png" class="user-img mr-2" alt="">
+                    <img src="~/otika-bootstrap-admin-template/assets/img/users/user-2.png" class="user-img mr-2" alt="">
                     <div class="media-body ml-3">
                         <div class="badge badge-pill badge-warning mb-1 float-right">Bug</div>
                         <span class="font-weight-bold">#57854</span>
@@ -553,7 +461,7 @@
                     </div>
                 </div>
                 <div class="support-ticket media pb-1 mb-3">
-                    <img src="assets/img/users/user-3.png" class="user-img mr-2" alt="">
+                    <img src="~/otika-bootstrap-admin-template/assets/img/users/user-3.png" class="user-img mr-2" alt="">
                     <div class="media-body ml-3">
                         <div class="badge badge-pill badge-primary mb-1 float-right">Query</div>
                         <span class="font-weight-bold">#85784</span>
@@ -566,7 +474,7 @@
                     </div>
                 </div>
                 <div class="support-ticket media pb-1 mb-3">
-                    <img src="assets/img/users/user-6.png" class="user-img mr-2" alt="">
+                    <img src="~/otika-bootstrap-admin-template/assets/img/users/user-6.png" class="user-img mr-2" alt="">
                     <div class="media-body ml-3">
                         <div class="badge badge-pill badge-info mb-1 float-right">Enhancement</div>
                         <span class="font-weight-bold">#25874</span>
