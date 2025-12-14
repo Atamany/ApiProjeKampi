@@ -21,7 +21,7 @@ namespace ApiProjeKampi_WebAPI.Controllers
         [HttpGet]
         public IActionResult ReservationList()
         {
-            var values = _context.Reservations.ToList();
+            var values = _context.Reservations.OrderByDescending(x=>x.ReservationDate).ToList();
             return Ok(_mapper.Map<List<ResultReservationDTO>>(values));
         }
         [HttpPost]
