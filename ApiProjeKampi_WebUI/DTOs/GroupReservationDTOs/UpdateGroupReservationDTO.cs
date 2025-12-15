@@ -1,6 +1,6 @@
 ﻿namespace ApiProjeKampi_WebUI.DTOs.GroupReservationDTOs
 {
-    public class ResultGroupReservationDTO
+    public class UpdateGroupReservationDTO
     {
         public int GroupReservationId { get; set; }
         public string ResponsibleCustomerName { get; set; }

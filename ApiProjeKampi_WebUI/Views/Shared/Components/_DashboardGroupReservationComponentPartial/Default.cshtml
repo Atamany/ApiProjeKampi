@@ -36,48 +36,27 @@
                             <th>Öncelik</th>
                             <th>Detaylar</th>
                         </tr>
-                        <tr>
-                            <td class="p-0 text-center">
-                                <div class="custom-checkbox custom-control">
-                                    <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                           id="checkbox-1">
-                                    <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
-                                </div>
-                            </td>
-                            <td>Create a mobile app</td>
-                            <td class="text-truncate">
-                                <ul class="list-unstyled order-list m-b-0 m-b-0">
-                                    <li class="team-member team-member-sm">
-                                        <img class="rounded-circle"
-                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-8.png" alt="user" data-toggle="tooltip" title=""
-                                             data-original-title="Wildan Ahdian">
-                                    </li>
-                                    <li class="team-member team-member-sm">
-                                        <img class="rounded-circle"
-                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-9.png" alt="user" data-toggle="tooltip" title=""
-                                             data-original-title="John Deo">
-                                    </li>
-                                    <li class="team-member team-member-sm">
-                                        <img class="rounded-circle"
-                                             src="~/otika-bootstrap-admin-template/assets/img/users/user-10.png" alt="user" data-toggle="tooltip" title=""
-                                             data-original-title="Sarah Smith">
-                                    </li>
-                                    <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span></li>
-                                </ul>
-                            </td>
-                            <td class="align-middle">
-                                <div class="progress-text">50%</div>
-                                <div class="progress" data-height="6">
-                                    <div class="progress-bar bg-success" data-width="50%"></div>
-                                </div>
-                            </td>
-                            <td>2018-01-20</td>
-                            <td>2019-05-28</td>
-                            <td>
-                                <div class="badge badge-success">Low</div>
-                            </td>
-                            <td><a href="#" class="btn btn-outline-primary">Detail</a></td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="p-0 text-center">
+                                    <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                               id="checkbox-1">
+                                        <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>@item.GroupTitle</td>
+                                <td>@item.ResponsibleCustomerName</td>
+                                <td>@item.ReservationStatus</td>
+                                <td>@item.LastProcessDate</td>
+                                <td>@item.ReservationDate</td>
+                                <td>
+                                    <div class="badge badge-success">@item.Priority</div>
+                                </td>
+                                <td><a href="#" class="btn btn-outline-primary">Detaylar</a></td>
+                            </tr>
+                        }
                     </table>
                 </div>
             </div>

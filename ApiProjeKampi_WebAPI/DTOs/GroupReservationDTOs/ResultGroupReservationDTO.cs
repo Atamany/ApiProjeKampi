@@ -1,4 +1,4 @@
-﻿namespace ApiProjeKampi_WebUI.DTOs.GroupReservationDTOs
+﻿namespace ApiProjeKampi_WebAPI.DTOs.GroupReservationDTOs
 {
     public class ResultGroupReservationDTO
     {

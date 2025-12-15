@@ -3,6 +3,7 @@ using ApiProjeKampi_WebAPI.DTOs.CategoryDTOs;
 using ApiProjeKampi_WebAPI.DTOs.EmployeeTaskDTOs;
 using ApiProjeKampi_WebAPI.DTOs.EventDTOs;
 using ApiProjeKampi_WebAPI.DTOs.FeatureDTOs;
+using ApiProjeKampi_WebAPI.DTOs.GroupReservationDTOs;
 using ApiProjeKampi_WebAPI.DTOs.ImageDTOs;
 using ApiProjeKampi_WebAPI.DTOs.MessageDTOs;
 using ApiProjeKampi_WebAPI.DTOs.NotificationDTOs;
@@ -79,6 +80,11 @@ namespace ApiProjeKampi_WebAPI.Mapping
             CreateMap<EmployeeTask, CreateEmployeeTaskDTO>().ReverseMap();
             CreateMap<EmployeeTask, UpdateEmployeeTaskDTO>().ReverseMap();
             CreateMap<EmployeeTask, GetByIdEmployeeTaskDTO>().ReverseMap();
+
+            CreateMap<GroupReservation, ResultGroupReservationDTO>().ReverseMap();
+            CreateMap<GroupReservation, CreateGroupReservationDTO>().ReverseMap();
+            CreateMap<GroupReservation, UpdateGroupReservationDTO>().ReverseMap();
+            CreateMap<GroupReservation, GetByIdGroupReservationDTO>().ReverseMap();
         }
     }
 }
