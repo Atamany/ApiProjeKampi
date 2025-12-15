@@ -22,8 +22,8 @@
                                 <th scope="col">Telefon</th>
                                 <th scope="col">E-Posta</th>
                                 <th scope="col">Açık Saatler</th>
-                                <th scope="col">Sil</th>
-                                <th scope="col">Güncelle</th>
+                                @*                                 <th scope="col">Sil</th>
+ *@                                <th scope="col">Güncelle</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,13 +40,13 @@
                                     <td>@item.Phone</td>
                                     <td>@item.Email</td>
                                     <td>@item.OpenHours</td>
-                                    <td><a href="~/Contact/DeleteContact/@item.ContactId/" class="btn btn-danger">Sil</a></td>
-                                    <td><a href="~/Contact/UpdateContact/@item.ContactId/" class="btn btn-warning">Güncelle</a></td>
+                                    @*                                     <td><a href="~/Contact/DeleteContact/@item.ContactId/" class="btn btn-danger">Sil</a></td>
+ *@                                    <td><a href="~/Contact/UpdateContact/@item.ContactId/" class="btn btn-warning">Güncelle</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                    <a href="~/Contact/CreateContact/" class="btn btn-primary">Ekle</a>
+                    @* <a href="~/Contact/CreateContact/" class="btn btn-primary">Ekle</a> *@
                 </div>
             </div>
         </div>
