@@ -1,5 +1,6 @@
 ﻿using ApiProjeKampi_WebAPI.DTOs.AboutDTOs;
 using ApiProjeKampi_WebAPI.DTOs.CategoryDTOs;
+using ApiProjeKampi_WebAPI.DTOs.EmployeeTaskDTOs;
 using ApiProjeKampi_WebAPI.DTOs.EventDTOs;
 using ApiProjeKampi_WebAPI.DTOs.FeatureDTOs;
 using ApiProjeKampi_WebAPI.DTOs.ImageDTOs;
@@ -73,6 +74,11 @@ namespace ApiProjeKampi_WebAPI.Mapping
             CreateMap<Image, CreateImageDTO>().ReverseMap();
             CreateMap<Image, UpdateImageDTO>().ReverseMap();
             CreateMap<Image, GetByIdImageDTO>().ReverseMap();
+
+            CreateMap<EmployeeTask, ResultEmployeeTaskDTO>().ReverseMap();
+            CreateMap<EmployeeTask, CreateEmployeeTaskDTO>().ReverseMap();
+            CreateMap<EmployeeTask, UpdateEmployeeTaskDTO>().ReverseMap();
+            CreateMap<EmployeeTask, GetByIdEmployeeTaskDTO>().ReverseMap();
         }
     }
 }
