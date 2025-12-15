@@ -1,0 +1,34 @@
+﻿@using ApiProjeKampi_WebUI.DTOs.ImageDTOs
+@model UpdateImageDTO
+@{
+    ViewData["Title"] = "UpdateImage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="section-body">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+            <div class="card">
+                <form method="post">
+                    <div class="card-header">
+                        <h4>Görsel Güncelle</h4>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" asp-for="ImageId" class="form-control">
+                        <div class="form-group">
+                            <label>Görsel Adı</label>
+                            <input type="text" asp-for="Title" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Görsel (URL)</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control">
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary mr-1" type="submit">Güncelle</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

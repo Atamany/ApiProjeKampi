@@ -10,6 +10,7 @@
 <div class="bootstrap snippet">
     <section id="portfolio" class="gray-bg padding-top-bottom">
         <div class="projects-container scrollimation in">
+            <div class="row"><a href="~/Gallery/CreateImage/" style="display: flex; justify-content: center; align-items: center; height: 50px;" class="form-control"><b>Görsel Ekle</b></a></div>
             <div class="row">
                 @foreach(var item in Model){
                 <article class="col-md-4 col-sm-6 portfolio-item web-design apps psd">
@@ -19,10 +20,10 @@
                             <span class="project-title">@item.Title</span>
                             <span class="overlay-mask"></span>
                         </a>
-                        <a class="enlarge cboxElement" href="#" title="Bills Project">
-                            <i class="fa fa-expand fa-fw"></i>
+                        <a class="enlarge cboxElement" href="~/Gallery/UpdateImage/@item.ImageId" title="Güncelle">
+                            <i class="fa fa-pen"></i>
                         </a>
-                        <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
+                            <a class="link" href="~/Gallery/DeleteImage/@item.ImageId"><i class="fa fa-trash"></i></a>
                     </div>
                 </article>}
             </div>
