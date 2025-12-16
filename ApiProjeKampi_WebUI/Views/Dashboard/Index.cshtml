@@ -44,11 +44,11 @@
         </div>
     </div>
 </div>
-@* @await Component.InvokeAsync("_DashboardEmployeeTaskComponentPartial")
- *@@await Component.InvokeAsync("_DashboardGroupReservationComponentPartial")
+@await Component.InvokeAsync("_DashboardGroupReservationComponentPartial")
 
 <div class="row">
-    <div class="col-md-6 col-lg-12 col-xl-6">
+    @await Component.InvokeAsync("_DashboardAIDailyMenuSuggestionComponentPartial")
+    @* <div class="col-md-6 col-lg-12 col-xl-6">
         <!-- Support tickets -->
         <div class="card">
             <div class="card-header">
@@ -126,7 +126,7 @@
             </a>
         </div>
         <!-- Support tickets -->
-    </div>
+    </div> *@
     <div class="col-md-6 col-lg-12 col-xl-6">
         <div class="card">
             <div class="card-header">
