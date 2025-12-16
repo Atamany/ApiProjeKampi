@@ -38,7 +38,7 @@
   - [Features (Özellikler)](#features-özellikler)
   - [Testimonials (Referanslar)](#testimonials-referanslar)
   - [Abouts (Hakkında)](#abouts-hakkında)
-  - [Contacts (İletişim)](#contacts-iletişim)
+  - [Contacts (İletişim)](#contacts)
   - [Events (Etkinlikler)](#events-etkinlikler)
   - [Notifications (Bildirimler)](#notifications-bildirimler)
   - [Images (Görseller)](#images-görseller)
@@ -376,7 +376,7 @@ HuggingFaceApiKey=hf_your-huggingface-api-key-here
 | 🔴 `DELETE` | `/Abouts?id={id}` | Belirtilen hakkında bilgisini siler |
 | 🟢 `GET` | `/Abouts/GetAbout?id={id}` | ID'ye göre hakkında bilgisi getirir |
 
-### Contacts (İletişim)
+### Contacts
 
 | Metot | Endpoint | Açıklama |
 |:-----:|----------|----------|
@@ -450,64 +450,30 @@ HuggingFaceApiKey=hf_your-huggingface-api-key-here
 
 ## 📸 Projeden Görseller
 
-> 📌 **Not:** Bu bölüme proje ekran görüntüleri eklenecektir.
-
 ### 🏠 Ana Sayfa
-<!-- Görsel eklemek için aşağıdaki formatı kullanın -->
-```markdown
-![Ana Sayfa](screenshots/homepage.png)
-```
-*Ana sayfa ekran görüntüsü buraya eklenecek*
+<img width="1900" alt="#01" src="https://github.com/user-attachments/assets/394036b9-b78d-46d6-90bf-e142c1d220ad" />
+<img width="1900" alt="#02" src="https://github.com/user-attachments/assets/44eefd1b-a26e-4dd7-9a3a-d7cd10b0037b" />
+<img width="1900" alt="#03" src="https://github.com/user-attachments/assets/695b216d-50db-4028-84d6-78b223d199f0" />
+<img width="1900" alt="#04" src="https://github.com/user-attachments/assets/20414fa5-d3b6-4f83-ab82-daab8bc9e1cc" />
+<img width="1900" alt="#05" src="https://github.com/user-attachments/assets/3a854180-1daf-4515-85c9-f4b8cbab356e" />
+<img width="1900" alt="#06" src="https://github.com/user-attachments/assets/c3717767-3afd-4f04-aa5d-6d8bbfe1e43a" />
+<img width="1900" alt="#07" src="https://github.com/user-attachments/assets/8f1b974d-1ad3-4492-9eff-7b25283d5e1f" />
+<img width="1900" alt="#08" src="https://github.com/user-attachments/assets/e847f3cd-d21a-4fa0-85e6-ae20921c697e" />
+<img width="1900" alt="#09" src="https://github.com/user-attachments/assets/3b7e5f8a-3d22-4e51-bc2a-dca1a460d293" />
 
----
+### 📊 Admin Paneli
+<img width="1900" alt="#10" src="https://github.com/user-attachments/assets/555ea007-897e-492d-b349-512f02000fee" />
+<img width="1900" alt="#11" src="https://github.com/user-attachments/assets/a38d5ade-b701-4234-942c-d70bd64eef38" />
+<img width="1900" alt="#12" src="https://github.com/user-attachments/assets/6ef912b7-34cd-4288-9286-ba774bb2168d" />
+<img width="1900" alt="#13" src="https://github.com/user-attachments/assets/f1c3d76f-aeb8-4cbf-b554-0af7d4d9a80d" />
+<img width="1900" alt="#14" src="https://github.com/user-attachments/assets/3f966dbe-07aa-49df-bbf3-e399ac9da26e" />
+<img width="1900" alt="#15" src="https://github.com/user-attachments/assets/fa88767a-0694-4189-ae4c-383a4b0757df" />
+<img width="1900" alt="#16" src="https://github.com/user-attachments/assets/3eb6d909-2091-43d8-9d1a-f6a498e58290" />
+<img width="1900" alt="#17" src="https://github.com/user-attachments/assets/984b3b02-bd60-435f-96a8-f29c8b256bf0" />
+<img width="1900" alt="#18" src="https://github.com/user-attachments/assets/cd848539-7fdf-4eba-9e17-5c6efbeed4d1" />
+<img width="1900" alt="#19" src="https://github.com/user-attachments/assets/03f791a4-e672-488c-99b9-1221dd56e391" />
+<img width="1900" alt="#20" src="https://github.com/user-attachments/assets/60b4f021-be4f-4b68-a0ff-2b14a952284b" />
 
-### 📊 Admin Dashboard
-```markdown
-![Admin Dashboard](screenshots/dashboard.png)
-```
-*Dashboard ekran görüntüsü buraya eklenecek*
-
----
-
-### 🍽️ Menü Sayfası
-```markdown
-![Menü](screenshots/menu.png)
-```
-*Menü sayfası ekran görüntüsü buraya eklenecek*
-
----
-
-### 📅 Rezervasyon Yönetimi
-```markdown
-![Rezervasyonlar](screenshots/reservations.png)
-```
-*Rezervasyon yönetim ekranı görüntüsü buraya eklenecek*
-
----
-
-### 📡 Swagger API Dokümantasyonu
-```markdown
-![Swagger](screenshots/swagger.png)
-```
-*Swagger arayüzü ekran görüntüsü buraya eklenecek*
-
----
-
-### 🤖 AI Yemek Tarifi Önerisi
-```markdown
-![AI Recipe](screenshots/ai-recipe.png)
-```
-*Yapay zeka destekli yemek tarifi önerisi ekranı buraya eklenecek*
-
----
-
-### 💬 AI Sohbet Asistanı
-```markdown
-![AI Chat](screenshots/ai-chat.png)
-```
-*Gerçek zamanlı AI sohbet ekranı buraya eklenecek*
-
----
 
 ## 🚀 Kurulum ve Çalıştırma
 
